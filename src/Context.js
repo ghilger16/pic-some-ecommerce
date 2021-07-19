@@ -32,6 +32,10 @@ const ContextProvider = ({ children }) => {
     setAllCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
+  const emptyCart = () => {
+    setAllCartItems([]);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -40,6 +44,7 @@ const ContextProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
+        emptyCart,
       }}
     >
       {children}
